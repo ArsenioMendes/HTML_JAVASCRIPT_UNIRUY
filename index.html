@@ -1,172 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Média e Frequência Uniruy</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f2f2f2;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-    }
-
-    h2 {
-      color: #333;
-    }
-
-    table {
-      border-collapse: collapse;
-      width: 50%;
-      margin-top: 20px;
-      background-color: #fff;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    th, td {
-      border: 1px solid #ddd;
-      padding: 12px;
-      text-align: left;
-    }
-
-    th {
-      background-color: #3498db;
-      color: #fff;
-    }
-
-    tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
-
-    tr:hover {
-      background-color: #e0e0e0;
-    }
-
-    button {
-      background-color: #3498db;
-      color: #fff;
-      border: none;
-      padding: 8px 12px;
-      cursor: pointer;
-      margin-top: 10px;
-    }
-
-    button:hover {
-      background-color: #2980b9;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REGISTRO MÉDIA UNIRUY</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h2>REGISTRO MÉDIA UNIRUY</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ALUNO</th>
+                <th>NOTA1</th>
+                <th>NOTA2</th>
+                <th>NOTA3</th>
+                <th>RESULTADO MÉDIA</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ALUNO1</td>
+                <td><input type="number" id="nota1_aluno1"></td>
+                <td><input type="number" id="nota2_aluno1"></td>
+                <td><input type="number" id="nota3_aluno1"></td>
+                <td>
+                    <button onclick="calcularMedia('aluno1')">CALCULAR</button>
+                    <button onclick="salvarDados('aluno1')">SALVAR</button>
+                    <button onclick="carregarDados('aluno1')">CARREGAR</button>
+                    <button onclick="excluirDados('aluno1')">EXCLUIR</button>
+                </td>
+            </tr>
+            <tr>
+                <td>ALUNO2</td>
+                <td><input type="number" id="nota1_aluno2"></td>
+                <td><input type="number" id="nota2_aluno2"></td>
+                <td><input type="number" id="nota3_aluno2"></td>
+                <td>
+                    <button onclick="calcularMedia('aluno1')">CALCULAR</button>
+                    <button onclick="salvarDados('aluno1')">SALVAR</button>
+                    <button onclick="carregarDados('aluno1')">CARREGAR</button>
+                    <button onclick="excluirDados('aluno1')">EXCLUIR</button>
+                </td>
+            </tr>
+            <tr>
+                <td>ALUNO3</td>
+                <td><input type="number" id="nota1_aluno3"></td>
+                <td><input type="number" id="nota2_aluno3"></td>
+                <td><input type="number" id="nota3_aluno3"></td>
+                <td>
+                    <button onclick="calcularMedia('aluno1')">CALCULAR</button>
+                    <button onclick="salvarDados('aluno1')">SALVAR</button>
+                    <button onclick="carregarDados('aluno1')">CARREGAR</button>
+                    <button onclick="excluirDados('aluno1')">EXCLUIR</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
-  <h2 style="text-align: center;">Média e Frequência Uniruy</h2>
+    <h2>CONSULTA MÉDIA UNIRUY</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ALUNO</th>
+                <th>RESULTADO MÉDIA</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ALUNO1</td>
+                <td id="consulta_media_aluno1"></td>
+            </tr>
+            <tr>
+                <td>ALUNO2</td>
+                <td id="consulta_media_aluno2"></td>
+            </tr>
+            <tr>
+                <td>ALUNO3</td>
+                <td id="consulta_media_aluno3"></td>
+            </tr>
+        </tbody>
+    </table>
 
-  <!-- Tabela de Média -->
-  <table>
-    <thead>
-      <tr>
-        <th>Nome do Aluno</th>
-        <th>Nota 01</th>
-        <th>Nota 02</th>
-        <th>Nota 03</th>
-        <th>Média</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr id="aluno1">
-        <td>Arsênio</td>
-        <td contenteditable="true">0</td>
-        <td contenteditable="true">0</td>
-        <td contenteditable="true">0</td>
-        <td><button onclick="calcularMedia('aluno1')">Calcular Média</button></td>
-      </tr>
-      <tr id="aluno2">
-        <td>Gabriel</td>
-        <td contenteditable="true">0</td>
-        <td contenteditable="true">0</td>
-        <td contenteditable="true">0</td>
-        <td><button onclick="calcularMedia('aluno2')">Calcular Média</button></td>
-      </tr>
-      <tr id="aluno3">
-        <td>Johann</td>
-        <td contenteditable="true">0</td>
-        <td contenteditable="true">0</td>
-        <td contenteditable="true">0</td>
-        <td><button onclick="calcularMedia('aluno3')">Calcular Média</button></td>
-      </tr>
-    </tbody>
-  </table>
+    <h2>FREQUÊNCIA UNIRUY</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>DATA</th>
+                <th>ALUNO1</th>
+                <th>ALUNO2</th>
+                <th>ALUNO3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><input type="date" id="data_frequencia"></td>
+                <td>
+                    <select id="frequencia_aluno1">
+                        <option value="PRESENTE">PRESENTE</option>
+                        <option value="AUSENTE">AUSENTE</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="frequencia_aluno2">
+                        <option value="PRESENTE">PRESENTE</option>
+                        <option value="AUSENTE">AUSENTE</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="frequencia_aluno3">
+                        <option value="PRESENTE">PRESENTE</option>
+                        <option value="AUSENTE">AUSENTE</option>
+                    </select>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 
-  <!-- Tabela de Frequência -->
-  <table style="margin-top: 20px;" id="tabelaFrequencia">
-    <thead>
-      <tr>
-        <th>Data</th>
-        <th>Arsênio</th>
-        <th>Gabriel</th>
-        <th>Johann</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td contenteditable="true">01/01/2023</td>
-        <td contenteditable="true">Presente</td>
-        <td contenteditable="true">Ausente</td>
-        <td contenteditable="true">Presente</td>
-      </tr>
-      <tr>
-        <td contenteditable="true">02/01/2023</td>
-        <td contenteditable="true">Ausente</td>
-        <td contenteditable="true">Presente</td>
-        <td contenteditable="true">Ausente</td>
-      </tr>
-      <tr>
-        <td contenteditable="true">03/01/2023</td>
-        <td contenteditable="true">Presente</td>
-        <td contenteditable="true">Presente</td>
-        <td contenteditable="true">Ausente</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <!-- Botão para adicionar mais linhas à tabela de Frequência -->
-  <button onclick="adicionarLinha()">Adicionar Linha de Frequência</button>
-
-  <script>
-    function calcularMedia(id) {
-      var row = document.getElementById(id);
-      var notas = [];
-      
-      // Obtendo as notas da linha
-      for (var i = 1; i <= 3; i++) {
-        var nota = parseFloat(row.cells[i].textContent) || 0;
-        notas.push(nota);
-      }
-      
-      // Calculando a média
-      var media = notas.reduce((acc, nota) => acc + nota, 0) / notas.length;
-
-      // Atualizando o valor da média na célula correspondente
-      row.cells[4].textContent = media.toFixed(2);
-    }
-
-    function adicionarLinha() {
-      var tabelaFrequencia = document.getElementById('tabelaFrequencia').getElementsByTagName('tbody')[0];
-      var novaLinha = tabelaFrequencia.insertRow(-1);
-
-      // Adicionando células à nova linha
-      for (var i = 0; i < 4; i++) {
-        var novaCelula = novaLinha.insertCell(i);
-        novaCelula.contentEditable = true;
-        novaCelula.textContent = i === 0 ? 'DD/MM/YYYY' : '';
-      }
-    }
-  </script>
-
+    <script src="script.js"></script>
 </body>
 </html>
